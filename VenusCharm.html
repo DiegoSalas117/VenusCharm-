@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <link href="backpack.png" rel="icon" sizes="32x32" type="image/png">
+        <title> Venus Charm</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        <script>
+            console.log('Hello from the log!')
+            //alert('Hello!')
+            $(document).ready(function(){
+                $('.photo img').click(function(){
+                    $('#overlay').addClass('show')
+                    console.log($(this))
+                    source = $(this).attr('src')
+                    $('#overlay .wrapper img').attr('src', source)
+                })
+
+                $('#overlay').click(function(){
+                    $(this).removeClass('show')
+                })
+            })
+        </script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+            #main-menu .link{
+                display: inline;
+                background-color: #fafafac6;
+            }
+            #overlay{
+                visibility: hidden;
+                opacity: 0;
+            }
+            #overlay img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 75%;
+                width: auto;
+                border: 50px solid #fbfbfb;
+            }
+            header {
+                background: #cc9837ab;
+                box-shadow: 0px 0px 3px 0 #ffffff;
+                display: inline-block;
+                width: 100%;
+                min-height: 170px;
+            }
+            body {
+                margin: 0;
+                font-family: 'Times New Roman', Times, serif, sans-serif;
+                background-color: #7073a430;
+            }
+            .company-name {
+                float: left;
+                margin-right: 35px;
+                padding: 10px;
+                font-weight: 600;
+                font-size: 37px;
+            }
+            ul.menu {
+                padding: 0px 0px;
+                margin: 0;
+            }
+            #main-menu{
+                background-color: #feffff;
+            }
+            #main-menu .link a {
+                color: #513636;
+                font-size: 18px !important;
+                text-decoration: none;
+                padding: 20px;
+                display: inline-block;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            #main-menu .link a:hover {
+                background: #e9eeef;
+                transform: scale(1.1);
+            }
+            .logo {
+                width: 80px;
+                height: 80px;
+                float: left;
+                margin-left: 10px;
+            }
+            .logo img {
+                width: 87%;
+                height: auto;
+                padding: 0%;
+            }
+            .container {
+                width: 98%;
+                margin: auto;
+            }
+            .photo {
+                display: inline-block;
+                width: 30%;
+                padding: 1%;
+                margin: 0.5%;
+                box-shadow: 1px 1px 4px 0 #554444;
+                cursor: pointer;
+            }
+            .photo img {
+                width: 100%;
+                height: 16vw;
+            }
+            h1#main-title {
+                text-align: center;
+                font-size: 45px;
+                margin: 30px 20px;
+                color: #fffdfd;
+            }
+            h2#subtitle   {
+                text-align: center;
+                font-size: 30px;
+                margin: 30px 20px;
+                color: #fffdfd;
+
+            }
+            p.third-screen {
+                width: 85%;
+                margin: 20px auto;
+            }
+            .photo:hover img {
+                transform: scale(0.95);
+            }
+            .smooth, .photo, .photo span{
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .gallery-main {
+                margin: 50px 0;
+            }
+            footer p {
+                font-size: 9px;
+                line-height: 2;
+                max-width: 70%;
+                margin: 40px auto;
+                text-align: center;
+            }
+            .photo:hover {
+                background: #fbf0de;
+            }
+            .photo span {
+                color: #513636;
+                font-weight: 600;
+                font-size: 20px;
+            }
+            .photo:hover span {
+                color: rgb(177, 115, 115);
+            }
+            .show {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                background: rgba(0, 0, 0, 0.8);
+                cursor: pointer;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="overlay">
+            <div class="wrapper">
+                <img src="#" />
+            </div>
+        </div>
+        <header>
+            <h1 id="main-title">Venus Charm</h1>
+            <h2 id="subtitle">Luxe Florar</h2>
+        </header>
+        <div class="row">
+            <div class="col-12">
+                <nav id="main-menu">
+                    <div class="wrapper">
+                        <div class="logo"><img src="logo.jpg" /></div>
+                        <div class="company-name">VC</div>
+                        <ul class="menu">
+                            <li id="active" class="link col-xs-2"><a href="#">Home</a></li>
+                            <li class="link col-xs-2"><a href="AboutUss.html" title="About our company">About us</a></li>
+                            <li class="link col-xs-2"><a href="https://marea.pro/venuscharm">Products</a></li>
+                            <li class="link col-xs-2"><a href="contactVC.html">Contact</a></li>
+                            <li class="link col-xs-2"><a href="privatepolicy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+       
+        </div>
+        <main class="container">
+            <div id="upper-group">
+            <p class="third-screen">Welcome to <strong>Venus Charm</strong>, At Venuz Charm, we understand that jewelry is more than just an accessory; it's a personal statement, a whisper of luxury, and a reflection of the inner self. Our mission is to adorn your life's moments with pieces that are as unique and beautiful as the memories you cherish. Each piece in our collection is crafted to not only meet your desires but to exceed them, bringing a touch of charm to every occasion</p>
+            </div>
+            <div class="gallery-main">
+                <div class="photo"><img class="smooth" src="rings main page.jpg" /><span>Rings</span></div>
+                <div class="photo"><img class="smooth" src="necklaces main page.jpg" /><span>necklaces</span></div>
+                <div class="photo"><img class="smooth" src="bracelets main page.jpg" /><span>Bracelets</span></div>
+                <div class="photo"><img class="smooth" src="Earrings main page.jpg" /><span>Earrings</span></div>
+                <div class="photo"><img class="smooth" src="charm mp.jpg" /><span>Charms</span></div>
+                <div class="photo"><img class="smooth" src="collection main page.jpg" /><span>Special Collections</span></div>
+            </div>      
+        </main>
+        <footer class="container">
+            <p>© 2024, Venus Charm. All rights reserved. No part of this website may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law. Unauthorized use and/or duplication of any content on this website without express and written permission from this site’s author and/or owner is strictly prohibited.</p>
+        </footer>
+    </body>
+</html>
